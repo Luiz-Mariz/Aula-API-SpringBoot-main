@@ -1,6 +1,8 @@
 // Pacote onde a classe está localizada
 package com.example.cadastro_pessoas.model;
 
+import java.time.LocalDateTime;
+
 // Importações necessárias para o mapeamento JPA e Lombok
 import jakarta.persistence.Column;           // Define colunas no banco de dados
 import jakarta.persistence.Entity;           // Define esta classe como uma entidade JPA
@@ -61,8 +63,9 @@ public class PessoasModel {
      * Define a coluna 'imagemPerfil' no banco de dados.
      * - `length = 2083`: Limita o tamanho do campo para 2083 caracteres, ideal para URLs longas.
      */
-    @Column(length = 2083)
+    @Column(name = "imagem_perfil", length = 2083)
     private String imagemPerfil;
+
 
     /**
      * Define a coluna 'createTime' no banco de dados.
@@ -70,8 +73,8 @@ public class PessoasModel {
      * - `updatable = false`: O valor não pode ser atualizado após a criação.
      * - Representa a data e hora de criação do registro.
      */
-    @Column(nullable = false, updatable = false)
-    private java.time.LocalDateTime createTime;
+    @Column(name = "create_time", nullable = false, updatable = false)
+    private LocalDateTime createTime;
 
     /**
      * Método anotado com @PrePersist, que é executado antes de inserir o objeto no banco de dados.

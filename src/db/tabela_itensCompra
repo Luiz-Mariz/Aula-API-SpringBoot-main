@@ -1,0 +1,9 @@
+CREATE TABLE ItensCompra(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    compra_id BIGINT,
+    produto_id BIGINT,
+    quantidade INT,
+    precoUnitario DOUBLE,
+    FOREIGN KEY (compra_id) REFERENCES compras(id),
+    FOREIGN KEY (produto_id) REFERENCES produtos(id)
+);

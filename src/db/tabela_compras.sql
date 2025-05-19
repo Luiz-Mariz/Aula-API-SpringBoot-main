@@ -1,0 +1,6 @@
+CREATE TABLE compras (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    dataCompra DATETIME DEFAULT CURRENT_TIMESTAMP,
+    pessoa_id BIGINT,
+    FOREIGN KEY (pessoa_id) REFERENCES table_name(id)
+);
